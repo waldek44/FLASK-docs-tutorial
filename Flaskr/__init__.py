@@ -50,4 +50,8 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
+    # dolny import funkcji inicjującej bazę danych
+    from . import db
+    db.init_app(app)
+
     return app

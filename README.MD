@@ -62,3 +62,26 @@ I Boom!
 ```
 flask run
 ```
+
+### 3 Define and Access the Database
+> Pierwszą rzeczą do zrobienia podczas pracy z bazą danych jest utworzenie połączenia z nią. 
+> Wszelkie zapytania i operacje są wykonywane przy użyciu połączenia, które jest zamykane po zakończeniu pracy.
+> W aplikacjach internetowych to połączenie jest zazwyczaj powiązane z żądaniem. Jest on tworzony w pewnym momencie 
+> podczas obsługi żądania i zamykany przed wysłaniem odpowiedzi.
+
+1. W katalogu Flaskr tworzę plik **db.py**
+
+2. Tworzę plik schema.sql
+
+3. Importuję i wywołuję funkcję `def init_app(app)` z pliku **db.py** w **__init__.py** jako dolny import
+funkcji fabryki **create_app**. 
+
+```
+# flaskr/__init__.py
+
+    from . import db
+    db.init_app(app)
+
+```
+
+4. W terminalu inicjuję `flask init-db` - w folderze **instance** mam teraz plik db sqlite3
